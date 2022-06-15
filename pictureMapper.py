@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import os
 import json
+import sys
 #create a function that returns the average color of an image
 def avg_colors(img):
     try:
@@ -36,10 +37,19 @@ def processImage(path):
 
 
 #---------------------------------------- Program starts here ---------------------------------------------------
+#check if the user has entered the correct number of arguments if not give instructions
+if len(sys.argv) < 2:
+    print("Please enter the correct number of arguments")
+    print("Usage: python3 pictureMapper.py <path to images> <output filename>")
+    sys.exit()
+#get the path to the images
+pathToPictures = sys.argv[1]
 
-pathToPictures = "pictures/"
-outputFileName = "pics.json"
-
+#get the output filename
+outputFileName = sys.argv[2]
+#process the images
+print("image path: " + pathToPictures)
+print("output file name: " + outputFileName)
 processImage(pathToPictures)
 open(outputFileName, "w").write(list_to_json(map))
 #ist_to_json(map)
