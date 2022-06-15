@@ -1,5 +1,6 @@
 import cv2
 import sys
+
 #createa a function that takes in an image file and shows it downscaled
 def showImage(img,scale):
     #scale the image down to a reasonable size
