@@ -12,6 +12,7 @@ def showImage(img,scale):
 #if no sysarg are given, display instructions
 if len(sys.argv) < 3:
     print("Usage: python3 showImage.py <image file> <scale>")
+    print("scale refers to a fraction of the original image size")
     sys.exit()
 
 #load in image
