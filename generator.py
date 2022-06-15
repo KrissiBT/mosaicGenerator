@@ -23,7 +23,7 @@ def concatenate(matrix,pixelSize):
     return imi
 
 #=================== create an custom demensional matrix of images
-def createRandomMatrix(xx,yy):
+def createRandomMatrix(xx,yy,picturePath):
     map = json.loads(open("face.json").read())      
     pickist = []
     line = []
@@ -78,12 +78,12 @@ def avg_color(img):
 def findSimilarColors(img, map, pixelSize,picturePath):
     otp = []
     for line in tqdm(img):
-        l = []
+        emptyLine = []
         for pixel in tqdm(line):
             m = cv2.imread(picturePath+findSimilarColor(pixel, map))
             m = cv2.resize(m, (pixelSize,pixelSize))
-            l.append(m)
-        otp.append(l)
+            emptyLine.append(m)
+        otp.append(emptyLine)
         clear()
     return otp
 
