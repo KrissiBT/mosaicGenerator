@@ -7,9 +7,9 @@ opencv_python
 tqdm
 
 # Workflow
-if the picture you are working with you might want to start off by scaling it down
+if the picture you are working with you might want to start off by scaling it down 
 ```sh
-python3 scaleImage.py shroom.png
+python3 scaleImage.py shroom.png 7
 ```
 that should return 
 ```sh
