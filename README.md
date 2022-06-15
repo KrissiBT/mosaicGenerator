@@ -15,3 +15,8 @@ then you should be able to simply run the program with all thouse variables inse
 # Warning
 this program is very stupid and has no trouble generating image files that are many Gb's in size
 when opencv tries to display such large files YOUR COMPUTER WILL CRASH
+<!-- add picture to readme -->
+# Result
+![plot](shroom.png)
+Turned to this
+![plot](output/scaled_out.png)
