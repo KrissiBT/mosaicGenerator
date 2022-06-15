@@ -103,10 +103,17 @@ clear()
 #---------------------------------------- Program starts here ---------------------------------------------------
 
 
-inputFile = "test.png"
-colorMap = "pics.json"
-pictureDirectory = "pictures/"
-ps = 100# define the size of each pixel image
+
+#check if system arguments are given
+if len(sys.argv) < 3:
+    print("Usage: python3 mosaikGenerator.py <input file> <color map> <image directory> <pixel size>")
+    print("color map is a json file that contains a list of colors and their corresponding picture")
+    print("pixel size is the size of each pixel in the output image")
+    sys.exit()
+inputFile = sys.argv[1]
+colorMap =  sys.argv[2]
+pictureDirectory =  sys.argv[3]
+ps = int(sys.argv[4])
 
 mynd  = cv2.imread(inputFile) #image to be used
 
@@ -121,7 +128,7 @@ display(ut, "normal")
 #ut = cv2.resize(ut, (int(ut.shape[1]/5),int(ut.shape[0]/5)))
 
 outPutFileName = inputFile.split(".")[0] + "_out."+inputFile.split(".")[1]
-cv2.imwrite(outPutFileName, ut)
+cv2.imwrite("output/"+outPutFileName, ut)
 cv2.imshow("input",mynd)
 cv2.waitKey(0)
 
