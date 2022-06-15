@@ -104,13 +104,13 @@ clear()
 
 
 inputFile = "test.png"
-colorMap = "dirty.json"
-pictureDirectory = "frames/"
-ps = 10# define the size of each pixel image
+colorMap = "pics.json"
+pictureDirectory = "pictures/"
+ps = 100# define the size of each pixel image
 
 mynd  = cv2.imread(inputFile) #image to be used
 
-map = json.loads(open("dirty.json").read())#map of color images
+map = json.loads(open(colorMap).read())#map of color images
 
 otp = findSimilarColors(mynd,map,ps,pictureDirectory) #function that loops through each picture and asembles a np array of the most similar pictures
 print("rendering image")
